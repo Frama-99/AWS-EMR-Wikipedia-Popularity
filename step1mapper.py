@@ -50,7 +50,7 @@ for line in sys.stdin:
             if char_exclude in pagename:
                 raise ExcludeInOutput
         
-        print(parse.unquote_plus(pagename) + ' ' + date + ' ' + str(pageviews))        
+        print(parse.unquote_plus(pagename) + '}' + date + '\t' + str(pageviews))        
 
     except ExcludeInOutput:
         continue

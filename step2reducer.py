@@ -28,7 +28,9 @@ def calc_popularity_and_print(page, date_arr, views_arr):
 
 # Initialize with information from the first line
 firstline = sys.stdin.readline()
-pagename, date, pageviews = firstline.strip().split('\t')
+while len(firstline.strip().rsplit("\t", 2)) != 3:
+    firstline = sys.stdin.readline()
+pagename, date, pageviews = firstline.strip().rsplit('\t', 2)
 
 prev_page = pagename
 prev_date = [date]
